@@ -1,13 +1,111 @@
+// Variebles section
+
 $background_color: #171717;
-$primary_color: #FF3F3F;
-$secondary_color: #B2EE3B;
+$primary_color: #ff3f3f;
+$secondary_color: #b2ee3b;
+$side_paddings: 5.21vw;
+$min_font_size: 1.67vw;
+
+// ————————————————————————————
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-size: $min_font_size;
 }
 
-// body {
-//     background: url(../img/hero_img.png) top no-repeat;
-//     background-color: $background_color;
-//     height: 1000vh;
-// }
+body {
+    background: url(../img/hero_img.png) top no-repeat;
+    background-color: $background_color;
+}
+
+section,
+#top-menu {
+    padding: 0 $side_paddings;
+}
+
+// Top menu
+
+#top-menu {
+    position: fixed;
+    top: 0;
+    background-color: $primary_color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.61vw;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+#logo {
+    width: 1.93vw;
+    height: 1.93vw;
+}
+
+#top-menu nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 4.8vw;
+    position: relative;
+    height: 2.61vw;
+    align-items: center;
+}
+
+#top-menu nav ul li:first-child {
+    padding-left: 1.55vw;
+}
+
+#top-menu nav ul li:nth-last-child(2) {
+    padding-right: 1.2vw;
+}
+
+#top-menu nav ul a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: color ease-in-out 0.5s;
+    height: 100%;
+}
+
+#top-menu .active {
+    color: $secondary_color;
+}
+
+#active-bg-slider {
+    position: absolute;
+    top: 0;
+    background-color: $background_color;
+    width: 25%;
+    height: 100%;
+    z-index: -1;
+    transition: margin-left 0.5s ease-in-out;
+}
+
+#top-menu nav ul li:hover a {
+    color: $secondary_color;
+}
+
+#top-menu nav ul li:nth-child(1):hover ~ #active-bg-slider {
+    margin-left: 0;
+}
+
+#top-menu nav ul li:nth-child(2):hover ~ #active-bg-slider {
+    margin-left: 25%;
+}
+
+#top-menu nav ul li:nth-child(3):hover ~ #active-bg-slider {
+    margin-left: 50%;
+}
+
+#top-menu nav ul li:nth-child(4):hover ~ #active-bg-slider {
+    margin-left: 75%;
+}
+
+// Welcome section
+
+#welcome-section {
+    height: 50.53vw;
+    display: flex;
+    justify-content: space-between;
+}
