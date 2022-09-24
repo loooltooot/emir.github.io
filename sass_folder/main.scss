@@ -169,6 +169,7 @@ section header :is(h1, h2) {
 // About me
 
 #aboutme-section {
+    position: relative;
     margin-top: 24.38vw;
 
     header div {
@@ -176,10 +177,75 @@ section header :is(h1, h2) {
         justify-content: space-between;
         width: 24vw;
         color: white;
+
+        a {
+            position: relative;
+        }
+
+        a::before {
+            content: "@loooltooot";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(270deg, #b2ee3b 0%, #ff3f3f 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        a:hover::before {
+            opacity: 1;
+        }
     }
 
     header h1 {
         margin-left: -0.19vw;
+    }
+
+    #aboutme-description {
+        padding: 10vw 0 10vw $side_paddings;
+        background-color: $primary_color;
+        width: 94.8vw;
+        transform: translateX(-$side_paddings);
+        box-sizing: border-box;
+        margin-top: 19.07vw;
+        border-radius: 0 0 20.84vw 0;
+
+        span {
+            display: block;
+            font-weight: 700;
+            // font-size: 1.33em;
+            font-size: 2.66em;
+            width: 51.88vw;
+
+            .highlight {
+                display: inline;
+                width: fit-content;
+                font-size: 1em;
+                color: $primary_color;
+                background-color: $background_color;
+            }
+        }
+    }
+
+    #legoman {
+        position: absolute;
+        right: $side_paddings;
+        top: -2.6vw;
+        width: 44.64vw;
+    }
+
+    #aboutme-decal {
+        position: absolute;
+        right: $side_paddings;
+        top: 1.87vw;
+        z-index: -1;
+        width: 38.23vw;
+        height: 24.28vw;
+        background-color: $primary_color;
+        border-radius: 20.84vw 20.84vw 0 0;
     }
 }
 
@@ -189,4 +255,45 @@ section header span {
     text-decoration: none;
     margin-top: -0.5vw;
     display: block;
+}
+
+// Portfolio
+
+#portfolio-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7.19vw;
+
+    header {
+        text-align: right;
+
+        h2 {
+            margin-right: -0.35vw;
+        }
+    }
+
+    #buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10.9vw;
+
+        svg {
+            cursor: pointer;
+        }
+
+        .shadow {
+            opacity: 0;
+            transition: opacity ease 0.7s;
+        }
+
+        svg:hover > path.shadow {
+            opacity: 1;
+        }
+    }
+}
+
+// Contacts
+
+#contacts-section {
+    margin-top: 18.25vw;
 }
