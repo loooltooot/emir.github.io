@@ -1,13 +1,573 @@
-$background_color: #171717;
-$primary_color: #FF3F3F;
-$secondary_color: #B2EE3B;
+// Variebles section
+
+$background_color: #101010;
+$primary_color: #ff3f3f;
+$secondary_color: #b2ee3b;
+$side_paddings: 5.21vw;
+$min_font_size: 1.25vw;
+$menu_font_color: #A5A5A5;
+
+// ————————————————————————————
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    font-size: $min_font_size;
 }
 
-// body {
-//     background: url(../img/hero_img.png) top no-repeat;
-//     background-color: $background_color;
-//     height: 1000vh;
-// }
+body {
+    background: url(../img/hero_img.png) top no-repeat;
+    background-color: $background_color;
+}
+
+section:not(#welcome-section),
+#top-menu {
+    padding: 0 $side_paddings;
+}
+
+section header :is(h1, h2) {
+    margin: 0;
+    font-size: 4.16em;
+    color: $secondary_color;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+// Top menu
+
+#top-menu {
+    position: fixed;
+    top: 0;
+    background-color: $primary_color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.61vw;
+    width: 100vw;
+    box-sizing: border-box;
+    z-index: 10;
+    display: none;
+
+    nav ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 3.65vw;
+        position: relative;
+        height: 2.61vw;
+        align-items: center;
+    }
+
+    nav ul li:first-child {
+        padding-left: 1.57vw;
+    }
+
+    nav ul li:nth-last-child(2) {
+        padding-right: 1.57vw;
+    }
+
+    nav ul a {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        transition: color ease-in-out 0.5s;
+        height: 100%;
+    }
+
+    .active {
+        color: $secondary_color;
+    }
+
+    nav ul li:hover a {
+        color: $secondary_color;
+    }
+
+    nav ul li:nth-child(1):hover ~ #active-bg-slider {
+        width: 8.81vw;
+        margin-left: 0;
+    }
+
+    nav ul li:nth-child(2):hover ~ #active-bg-slider {
+        width: 8.6vw;
+        margin-left: 9.22vw;
+    }
+
+    nav ul li:nth-child(3):hover ~ #active-bg-slider {
+        width: 8.29vw;
+        margin-left: 18.15vw;
+    }
+
+    nav ul li:nth-child(4):hover ~ #active-bg-slider {
+        width: 6.78vw;
+        margin-left: 26.88vw;
+    }
+}
+
+#logo {
+    width: 1.93vw;
+    height: 1.93vw;
+}
+
+#active-bg-slider {
+    position: absolute;
+    top: 0;
+    background-color: $background_color;
+    width: 8.81vw;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+// Welcome section
+
+#welcome-section {
+    height: 50.53vw;
+    display: flex;
+    justify-content: space-between;
+
+    .welcome-sidebar {
+        width: 24vw;
+        display: flex;
+    }
+
+    .welcome-sidebar:last-child {
+        justify-content: right;
+    }
+
+    .welcome-actionbar {
+        width: 13.6vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease-in-out;
+        border-radius: 0 0 10vw 0;
+    }
+
+    #right-sidebar .welcome-actionbar {
+        border-radius: 0 0 0 10vw;
+    }
+
+    .welcome-sidebar:hover > .welcome-actionbar {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .welcome-sidebar:hover > .welcome-actionbar > .triangle {
+        background-color: white;
+    }
+
+    .triangle {
+        width: 61px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.05);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        transform: rotate(-90deg);
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    #right-sidebar .triangle {
+        transform: rotate(90deg);
+    }
+}
+
+// About me
+
+#aboutme-section {
+    position: relative;
+    margin-top: 24.38vw;
+
+    header div {
+        display: flex;
+        justify-content: space-between;
+        width: 24vw;
+        color: white;
+
+        a {
+            position: relative;
+        }
+
+        a::before {
+            content: "@loooltooot";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(270deg, #b2ee3b 0%, #ff3f3f 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        a:hover::before {
+            opacity: 1;
+        }
+    }
+
+    header h1 {
+        margin-left: -0.19vw;
+    }
+
+    #aboutme-description {
+        padding: 10vw 0 10vw $side_paddings;
+        background-color: $primary_color;
+        width: 94.8vw;
+        transform: translateX(-$side_paddings);
+        box-sizing: border-box;
+        margin-top: 19.07vw;
+        border-radius: 0 0 20.84vw 0;
+
+        span {
+            display: block;
+            font-weight: 700;
+            // font-size: 1.33em;
+            font-size: 2.66em;
+            width: 51.88vw;
+
+            .highlight {
+                display: inline;
+                width: fit-content;
+                font-size: 1em;
+                color: $primary_color;
+                background-color: $background_color;
+            }
+        }
+    }
+
+    #legoman {
+        position: absolute;
+        right: $side_paddings;
+        top: -2.6vw;
+        width: 44.64vw;
+    }
+
+    #aboutme-decal {
+        position: absolute;
+        right: $side_paddings;
+        top: 1.87vw;
+        z-index: -1;
+        width: 38.23vw;
+        height: 24.28vw;
+        background-color: $primary_color;
+        border-radius: 20.84vw 20.84vw 0 0;
+    }
+}
+
+#aboutme-section header div a,
+section header span {
+    color: white;
+    text-decoration: none;
+    margin-top: -0.5vw;
+    display: block;
+}
+
+// Portfolio
+
+#portfolio-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7.19vw;
+
+    header {
+        text-align: right;
+
+        h2 {
+            margin-right: -0.35vw;
+        }
+    }
+
+    #buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 13.9vw;
+
+        svg {
+            cursor: pointer;
+        }
+
+        .shadow {
+            opacity: 0;
+            transition: opacity ease 0.7s;
+        }
+
+        svg:hover > path.shadow {
+            opacity: 1;
+        }
+    }
+}
+
+// Contacts
+
+#contacts-section {
+    margin-top: 18.25vw;
+    background-color: $primary_color;
+    position: relative;
+    height: 31.41vw;
+    overflow-x: clip;
+
+    header {
+        background-color: $background_color;
+        width: 22.86vw;
+        height: 5.21vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contacts-description {
+        display: flex;
+        justify-content: space-between;
+
+        #activity {
+            width: 39.64vw;
+            height: 16.67vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 4.74vw;
+
+            p {
+                font-weight: 700;
+                font-size: 2.66em;
+                margin: 0;
+            }
+
+            #contacts-buttons {
+                display: flex;
+                justify-content: space-between;
+                width: 34.48vw;
+
+                .contact-button {
+                    border: $background_color solid 0.21vw;
+                    padding: 1.38vw 2.6vw;
+                    font-weight: bold;
+                    cursor: pointer;
+                    color: $background_color;
+                    text-decoration: none;
+                    transition: background-color ease-in-out 0.5s,
+                        color ease-in-out 0.5s;
+                }
+
+                .contact-button:hover {
+                    color: $primary_color;
+                    background-color: $background_color;
+                }
+            }
+        }
+
+        #contacts-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: $background_color;
+            padding: 1.41vw $side_paddings 1.41vw 4.32vw;
+            height: 6.82vw;
+            transform: translateX($side_paddings);
+            color: $primary_color;
+            font-weight: 700;
+            box-sizing: border-box;
+
+            span {
+                position: relative;
+            }
+
+            @mixin icon($content: "", $left: -2.84vw) {
+                content: $content;
+                position: absolute;
+                left: $left;
+                top: 0;
+                width: 1.82vw;
+                height: 1.56vw;
+            }
+
+            span:first-child::before {
+                @include icon($content: url("../img/email-cont.svg"));
+            }
+
+            span:last-child::before {
+                @include icon(
+                    $content: url("../img/tg-cont.svg"), 
+                    $left: -3vw
+                );
+            }
+        }
+    }
+
+    #legohand {
+        position: absolute;
+        transform: rotate(56.78deg);
+        left: 60.39vw;
+        top: 10vw;
+    }
+}
+
+// Footer
+
+body > footer {
+    margin-top: 12.53vw;
+    position: relative;
+    cursor: pointer;
+
+    #footer-logo {
+        width: 100vw;
+        height: 16.98vw;
+        position: absolute;
+        top: 3vw;
+        filter: none;
+        transition: filter ease-in-out .5s;
+    }
+
+    .actionbar {
+        height: 19.95vw;
+        background: linear-gradient(
+            180deg,
+            rgba(23, 23, 23, 0) 48.44%,
+            #b2ee3b 100%
+        );
+        width: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+    }
+}
+
+body > footer:hover {
+    .actionbar {
+        opacity: 1;
+    }
+
+    #footer-logo {
+        filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+}
+
+// Menu
+
+#menu {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba($color: $background_color, $alpha: .95);
+    backdrop-filter: blur(12px);
+    box-sizing: border-box;
+    padding-top: 2.92vw !important;
+    padding-bottom: 2.92vw !important;
+    display: none;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 4.48vw;
+            height: 4.48vw;
+        }
+
+        #circle {
+            width: 2.39vw;
+            height: 2.39vw;
+            border: $primary_color solid .42vw;
+            border-radius: 50%;
+            transition: background-color ease-in-out .5s;
+            cursor: pointer;
+        }
+
+        #circle:hover {
+            background-color: $primary_color;
+        }
+    }
+
+    nav {
+        display: flex;
+        height: 29.64vw;
+        
+        ul {
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+
+            li {
+                a {
+                    color: $menu_font_color;
+                    font-size: 2.66em;
+                    font-weight: 700;
+                    text-decoration: none;
+                    transition: color ease-in-out .5s;
+                }
+
+                a.active {
+                    color: $background_color;                
+                }
+            }
+
+            li:hover a {              
+                color: $background_color;              
+            }
+
+            div {
+                background-color: $primary_color;
+                height: 3.89vw;
+                width: 100%;
+                position: absolute;
+                z-index: -1;
+                transition: margin-top ease-in-out .5s;
+            }
+
+            li:nth-child(1):hover ~ div {
+                margin-top: 0;
+            }
+
+            li:nth-child(2):hover ~ div {
+                margin-top: 8vw;
+            }
+
+            li:nth-child(3):hover ~ div {
+                margin-top: 15.7vw;
+            }
+
+            li:nth-child(4):hover ~ div {
+                margin-top: 23.5vw;
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            width: 17.03vw;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            width: 17.03vw;
+
+            svg {
+                width: 3.44vw;
+                cursor: pointer;
+
+                path {
+                    transition: fill ease-in-out .5s;
+                }
+            }
+
+            svg:last-child {
+                width: 4.11vw;
+            }
+
+            svg:hover path {
+                fill: white;
+            }
+        }
+    }
+}
