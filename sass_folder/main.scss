@@ -16,6 +16,7 @@ $menu_font_color: #A5A5A5;
 
 body {
     background: url(../img/hero_img.png) top no-repeat;
+    background-size: 100vw 69.22vw;
     background-color: $background_color;
 }
 
@@ -281,6 +282,8 @@ section header span {
 
         svg {
             cursor: pointer;
+            width: 39.32vw;
+            height: 12.6vw;
         }
 
         .shadow {
@@ -370,12 +373,14 @@ section header span {
             }
 
             @mixin icon($content: "", $left: -2.84vw) {
-                content: $content;
                 position: absolute;
                 left: $left;
                 top: 0;
                 width: 1.82vw;
                 height: 1.56vw;
+                background-image: $content;
+                background-size: 1.82vw 1.56vw;
+                content: "";
             }
 
             span:first-child::before {
@@ -396,6 +401,8 @@ section header span {
         transform: rotate(56.78deg);
         left: 60.39vw;
         top: 10vw;
+        width: 61.98vw;
+        height: 34.84vw;
     }
 }
 
