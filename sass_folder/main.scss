@@ -156,8 +156,8 @@ section header :is(h1, h2) {
     }
 
     .triangle {
-        width: 61px;
-        height: 60px;
+        width: 3.13vw;
+        height: 3.13vw;
         background: rgba(255, 255, 255, 0.05);
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         transform: rotate(-90deg);
