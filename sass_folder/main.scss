@@ -148,7 +148,7 @@ section header :is(h1, h2) {
     }
 
     .welcome-sidebar:hover > .welcome-actionbar {
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: #ffffff0d !important;
     }
 
     .welcome-sidebar:hover > .welcome-actionbar > .triangle {
@@ -385,6 +385,7 @@ section header span {
 
             span:first-child::before {
                 @include icon($content: url("../img/email-cont.svg"));
+                top: .12vw;
             }
 
             span:last-child::before {
