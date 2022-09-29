@@ -233,11 +233,25 @@ section header :is(h1, h2) {
         }
     }
 
+    @keyframes legoman_animation {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(2deg);
+        }
+        100% {
+            transform: rotate(1deg);
+        }
+    }
+
     #legoman {
         position: absolute;
         right: $side_paddings;
         top: -2.6vw;
         width: 44.64vw;
+        transform-origin: 70% 50%;
+        animation: legoman_animation 4s infinite alternate;
     }
 
     #aboutme-decal {
@@ -399,11 +413,37 @@ section header span {
 
     #legohand {
         position: absolute;
-        transform: rotate(56.78deg);
-        left: 60.39vw;
-        top: 10vw;
+        transform: rotate(90deg);
+        left: 100vw;
+        top: 39vw;
         width: 61.98vw;
         height: 34.84vw;
+        transition: left ease-in-out 1.5s, transform ease-in-out 1.5s;
+        transform-origin: 100% 30%;
+    }
+
+    @keyframes legohand_animation {
+        0% {
+            transform: rotate(56.78deg);
+        }
+        33% {
+            transform: rotate(62deg);
+        }
+        66% {
+            transform: rotate(55deg);
+        }
+        100% {
+            transform: rotate(58deg);
+        }
+    }
+
+    #legohand.animated-hand {
+        left: 50.39vw;
+        transform: rotate(56.78deg);
+    }
+
+    #legohand.animation-hand {
+        animation: legohand_animation 8s infinite alternate;
     }
 }
 
@@ -412,7 +452,6 @@ section header span {
 body > footer {
     margin-top: 12.53vw;
     position: relative;
-    cursor: pointer;
 
     #footer-logo {
         width: 100vw;

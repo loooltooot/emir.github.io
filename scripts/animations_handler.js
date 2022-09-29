@@ -42,20 +42,22 @@ setTimeout(() => {
 }, actionbarAnimationInterval / 2);
 
 function animateActionbar(actionBar) {
-    $(actionBar).animate({backgroundColor: "#ffffff0d"}, actionbarAnimationTime, "easeOutBounce");
+    $(actionBar).animate({backgroundColor: "#ffffff1d"}, actionbarAnimationTime, "easeOutBounce");
     setTimeout(() => {
         $(actionBar).animate({backgroundColor: "transparent"}, actionbarAnimationTime, "easeOutBounce");
     }, actionbarAnimationInnerTimeout);
 }
 // ——————————————————————————————————
 
-// ::Aboutme Decal and Legoman Animation::
+// ::Aboutme Decal, Legoman and LegoHand Animation::
 $(legoman).css("top", "20vw");
 $(aboutmeDecal).css("top", "20vw");
+// $(legohand).css({"left": "100vw", "transform": "rotate(90deg)"});
 
 let isAboutmeHeaderSeen = false;
 let isAboutmeDescriptionSeen = false;
 let isPortfolioHeaderSeen = false;
+let isContactsButtonsSeen = false;
 $(window).scroll(() => {
     if(isInView("#aboutme-section header", 300) && !isAboutmeHeaderSeen) {
         $(aboutmeDecal).animate({top: "1.87vw"}, 500, "swing");
@@ -69,6 +71,13 @@ $(window).scroll(() => {
     if(isInView("#portfolio-section header") && !isPortfolioHeaderSeen) {
         $(legoman).animate({top: "-2.6vw"}, 1500, "swing");
         isPortfolioHeaderSeen = true;
+    }
+    if(isInView("#contacts-buttons", 100) && !isContactsButtonsSeen) {
+        $(legohand).addClass("animated-hand");
+        setTimeout(() => {
+            $(legohand).addClass("animation-hand");
+        }, 1600);
+        isContactsButtonsSeen = true;
     }
 });
 // ——————————————————————————————————
