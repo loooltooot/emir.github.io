@@ -1,19 +1,19 @@
 // Work in progress
 
-body::after {
-    content: "WORK IN PROGRESS";
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    background-color: rgba($color: #101010, $alpha: .98);
-    backdrop-filter: blur(16px);
-    text-align: center;
-    padding-top: 22%;
-    color: #ff3f3f;
-    font-size: 3.33vw;
-    font-weight: 700;
-}
+// body::after {
+//     content: "WORK IN PROGRESS";
+//     width: 100%;
+//     height: 100%;
+//     position: fixed;
+//     top: 0;
+//     background-color: rgba($color: #101010, $alpha: .98);
+//     backdrop-filter: blur(16px);
+//     text-align: center;
+//     padding-top: 22%;
+//     color: #ff3f3f;
+//     font-size: 3.33vw;
+//     font-weight: 700;
+// }
 
 // Variebles section
 
@@ -35,7 +35,7 @@ body {
     background: url(../img/hero_img.png) top no-repeat;
     background-size: 100vw 69.22vw;
     background-color: $background_color;
-    overflow-y: clip; // TEMP
+    // overflow-y: clip; // TEMP
 }
 
 section:not(#welcome-section),
@@ -55,7 +55,7 @@ section header :is(h1, h2) {
 
 #top-menu {
     position: fixed;
-    top: 0;
+    top: -2.61vw;
     background-color: $primary_color;
     display: flex;
     justify-content: space-between;
@@ -64,7 +64,6 @@ section header :is(h1, h2) {
     width: 100vw;
     box-sizing: border-box;
     z-index: 10;
-    display: none;
 
     nav ul {
         padding: 0;
@@ -77,11 +76,11 @@ section header :is(h1, h2) {
     }
 
     nav ul li:first-child {
-        padding-left: 1.57vw;
+        margin-left: 1.57vw;
     }
 
     nav ul li:nth-last-child(2) {
-        padding-right: 1.57vw;
+        margin-right: 1.57vw;
     }
 
     nav ul a {
@@ -101,23 +100,23 @@ section header :is(h1, h2) {
     }
 
     nav ul li:nth-child(1):hover ~ #active-bg-slider {
-        width: 8.81vw;
-        margin-left: 0;
+        width: 8.81vw !important;
+        margin-left: 0 !important;
     }
 
     nav ul li:nth-child(2):hover ~ #active-bg-slider {
-        width: 8.6vw;
-        margin-left: 9.22vw;
+        width: 8.6vw !important;
+        margin-left: 9.22vw !important;
     }
 
     nav ul li:nth-child(3):hover ~ #active-bg-slider {
-        width: 8.29vw;
-        margin-left: 18.15vw;
+        width: 8.29vw !important;
+        margin-left: 18.15vw !important;
     }
 
     nav ul li:nth-child(4):hover ~ #active-bg-slider {
-        width: 6.78vw;
-        margin-left: 26.88vw;
+        width: 6.78vw !important;
+        margin-left: 26.88vw !important;
     }
 }
 
@@ -519,7 +518,8 @@ body > footer:hover {
     box-sizing: border-box;
     padding-top: 2.92vw !important;
     padding-bottom: 2.92vw !important;
-    display: none;
+    opacity: 0;
+    z-index: -1;
 
     header {
         display: flex;
@@ -569,12 +569,12 @@ body > footer:hover {
                 }
 
                 a.active {
-                    color: $background_color;                
+                    color: $background_color;      
                 }
             }
 
             li:hover a {              
-                color: $background_color;              
+                color: $background_color !important;              
             }
 
             div {
