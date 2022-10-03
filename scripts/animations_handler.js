@@ -193,6 +193,22 @@ $(menuNavButtons).each((i, val) => {
     });
 });
 
+// ::Menu links::
+$("#menu-gh").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot");
+});
+
+$("#menu-vk").click((e) => {
+    e.preventDefault();
+    window.open("https://vk.com/catalin_software");
+});
+
+$("#menu-tg").click((e) => {
+    e.preventDefault();
+    window.open("https://t.me/loooltooot");
+});
+
 function hideFullscreenMenu() {
     $(menu).animate({ opacity: 0 }, 300);
     setTimeout(() => {
@@ -233,3 +249,4 @@ function bindActionButtons(buttons, target) {
         });
     });
 }
+// ————————————————————————————————
