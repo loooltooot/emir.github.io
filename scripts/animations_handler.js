@@ -250,3 +250,15 @@ function bindActionButtons(buttons, target) {
     });
 }
 // ————————————————————————————————
+
+// —————————————Portfolio travel————————————————
+
+$("#svg-apps").click((e) => {
+    e.preventDefault();
+    window.open("pages/portfolio_app.html");
+})
+
+$("#svg-web").click((e) => {
+    e.preventDefault();
+    window.open("pages/portfolio_web.html");
+})

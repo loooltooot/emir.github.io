@@ -1,0 +1,57 @@
+@import 'portfolio';
+
+.portfolio-item:nth-child(1) {
+    background: linear-gradient(180deg, #6CF8E8 0%, #60D7C9 100%);
+}
+
+.portfolio-item:nth-child(1)::before {
+    background: linear-gradient(0deg, #6CF8E8 0%, #60D7C9 100%);
+}
+
+.portfolio-item:nth-child(2) {
+    background: linear-gradient(0deg, #244F52 0%, #306569 100%);
+}
+
+.portfolio-item:nth-child(2)::before {
+    background: linear-gradient(180deg, #244F52 0%, #306569 100%);
+}
+
+.portfolio-item:nth-child(3) {
+    background: linear-gradient(180deg, #FF00F5 0%, #C200BB 100%);
+}
+
+.portfolio-item:nth-child(3)::before {
+    background: linear-gradient(0deg, #FF00F5 0%, #C200BB 100%);
+}
+
+.portfolio-item:hover::before {
+    opacity: 1;
+}
+
+.portfolio-item {
+    position: relative;
+
+    .bg-img {
+        width: 31.15vw;
+        margin: 0 auto;
+    }
+
+    .mb-bg-img {
+        width: 7.19vw;
+        position: absolute;
+    }
+}
+
+.portfolio-item:nth-child(1) {
+    .mb-bg-img {
+        left: 6.04vw;
+        bottom: 16.72vw;
+    }
+} 
+
+.portfolio-item:nth-child(3) {
+    .mb-bg-img {
+        right: 5.05vw;
+        bottom: 15.05vw;
+    }
+} 
