@@ -20,3 +20,17 @@ $(".footer-img").each((i, val) => {
         window.open(links[i]);
     });
 });
+
+// ::Portfolio items appearing::
+$(".portfolio-item:nth-child(1)").css({"transform": "translateX(-33.33vw)", 
+    "-webkit-transform": "translateX(-33.75vw)", 
+    "-moz-transform": "translateX(-33.33vw)"});
+
+$(".portfolio-item:nth-child(2)").css("transform", "translateY(-100vh)");
+$(".portfolio-item:nth-child(3)").css("transform", "translateY(100vh)");
+setTimeout(() => {
+    $(".portfolio-item").each((i, val) => {
+        $(val).removeAttr("style");
+        $(val).css("transition", "transform cubic-bezier(0.3, 0, 0.26, 1) .5s")
+    });
+}, 300);

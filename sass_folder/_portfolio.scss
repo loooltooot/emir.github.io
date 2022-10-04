@@ -29,6 +29,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    // transition: transform ease-in-out .5s;
 
     header img {
         margin: 1.82vw 0 0 1.82vw;
@@ -36,5 +37,14 @@ main {
 
     * {
         z-index: 10;
+    }
+
+    img.bg-img, img.mb-bg-img {
+        border-radius: 1.56vw 1.56vw 0 0;
+        box-shadow: 0px -4px 16px -4px rgba(0, 0, 0, 0.5);
+    }
+
+    img.mb-bg-img {
+        border-radius: .78vw .78vw 0 0;
     }
 }

@@ -5,7 +5,7 @@
 }
 
 .portfolio-item:nth-child(1)::before {
-    background: linear-gradient(0deg, #6CF8E8 0%, #60D7C9 100%);
+    @include beforeBg($bg: linear-gradient(0deg, #6CF8E8 0%, #60D7C9 100%));
 }
 
 .portfolio-item:nth-child(2) {
@@ -13,7 +13,7 @@
 }
 
 .portfolio-item:nth-child(2)::before {
-    background: linear-gradient(180deg, #244F52 0%, #306569 100%);
+    @include beforeBg($bg: linear-gradient(180deg, #244F52 0%, #306569 100%));
 }
 
 .portfolio-item:nth-child(3) {
@@ -21,7 +21,7 @@
 }
 
 .portfolio-item:nth-child(3)::before {
-    background: linear-gradient(0deg, #FF00F5 0%, #C200BB 100%);
+    @include beforeBg($bg: linear-gradient(0deg, #FF00F5 0%, #C200BB 100%));
 }
 
 .portfolio-item:hover::before {
@@ -39,6 +39,7 @@
     .mb-bg-img {
         width: 7.19vw;
         position: absolute;
+        z-index: 9;
     }
 }
 
