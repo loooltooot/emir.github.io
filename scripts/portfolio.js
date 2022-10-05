@@ -33,4 +33,28 @@ setTimeout(() => {
         $(val).removeAttr("style");
         $(val).css("transition", "transform cubic-bezier(0.3, 0, 0.26, 1) .5s")
     });
+    isAppearingInProgress = false;
 }, 300);
+
+// ::Bg-image animation::
+let isAppearingInProgress = true;
+
+$(".bg-img").css("transform", "translateY(200vh)");
+$(".mb-bg-img").css("transform", "translateY(100vh)");
+
+$(".portfolio-item").each((i, val) => {
+    $(val).hover(() => {
+        if(!isAppearingInProgress && !$(val).hasClass("initial-animation")) {
+            $(val).children(".bg-img").css("transform", "translateY(5vh)");
+            $(val).children(".mb-bg-img").css("transform", "translateY(5.8vh)");
+            $(val).children(".bg-img").css("transition", "transform cubic-bezier(0.3, 0, 0.09, 1.2) .5s");     
+            $(val).children(".mb-bg-img").css("transition", "transform cubic-bezier(0.3, 0, 0.09, 1.2) .7s");       
+            $(val).addClass("initial-animation");
+        } else {
+            $(val).children(".bg-img").css("transform", "translateY(6vh)");
+            setTimeout(() => {
+                $(val).children(".bg-img").css("transform", "translateY(5vh)");
+            }, 500);
+        }
+    }, () => {});
+});

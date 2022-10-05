@@ -14,7 +14,7 @@ $background-color: #101010;
 
 body {
     width: 100vw;
-    background-color: $background-color;
+    background: $background-color url("../img/80534.jpg") no-repeat;
 }
 
 main {
@@ -29,7 +29,6 @@ main {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    // transition: transform ease-in-out .5s;
 
     header img {
         margin: 1.82vw 0 0 1.82vw;
