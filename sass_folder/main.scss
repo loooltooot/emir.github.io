@@ -47,6 +47,10 @@ section header :is(h1, h2) {
     box-sizing: border-box;
 }
 
+#menu-bt {
+    display: none;
+}
+
 // Top menu
 
 #top-menu {
@@ -632,5 +636,40 @@ body > footer:hover {
                 fill: white;
             }
         }
+    }
+}
+
+// Mobile
+
+@media screen and (max-width: 450px) {
+    $min_font_size: 3.89vw;
+    $side_paddings: 8.33vw;
+
+    body {
+        background: $background_color url(../img/hero_img.png) 45% 0% no-repeat;
+        background-size: 280%;
+    }
+
+    * {
+        font-size: $min_font_size;
+    }
+
+    #menu-bt {
+        display: block;
+        position: sticky;
+        top: 2.78vw;
+        width: 7.78vw;
+        margin-top: 150vw;
+        margin-left: 100vw - 24.67vw;
+        cursor: pointer;
+        z-index: 11;
+    }
+
+    #welcome-section {
+        display: none;
+    }
+
+    #aboutme-section {
+        margin-top: 80vw;
     }
 }

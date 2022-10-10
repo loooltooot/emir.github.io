@@ -58,3 +58,34 @@ $(".portfolio-item").each((i, val) => {
         }
     }, () => {});
 });
+
+// ::Travel to github links::
+$("#px-vw").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot/css-px-converter");
+});
+
+$("#rivia").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot/rivia");
+});
+
+$("#eshaverma").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot/e-shawerma");
+});
+
+$("#tr-pro").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot/tourist-pro");
+});
+
+$("#st-tech").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot/systemo-technika");
+});
+
+$("#chx").click((e) => {
+    e.preventDefault();
+    // window.open("https://github.com/loooltooot/css-px-converter");
+});
