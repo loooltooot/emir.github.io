@@ -56,3 +56,11 @@
         bottom: 15.05vw;
     }
 } 
+
+@media screen and (max-width: 450px) {
+    .portfolio-item {
+        .bg-img {
+            width: 83.33vw;
+        }
+    }
+}

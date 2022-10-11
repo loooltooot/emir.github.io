@@ -42,3 +42,15 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .portfolio-item {
+        .bg-img {
+            width: 45.78vw;
+        }
+
+        .footer-img {
+            width: 25vw;
+        }
+    }
+}

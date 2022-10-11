@@ -47,3 +47,15 @@ main {
         border-radius: .78vw .78vw 0 0;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .portfolio-item {
+        width: 100vw;
+        overflow-y: clip;
+        height: 50vh;
+
+        header img {
+            margin: 6vw 0 0 6vw;
+        }
+    }
+}
