@@ -44,6 +44,80 @@ colorSc = "#b2ee3b";
 
 // —————————Animations—————————————
 
+$(menuExitButton).click((e) => {
+    e.preventDefault();
+    hideFullscreenMenu();
+});
+
+$("#menu-gh").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot");
+});
+
+$("#menu-vk").click((e) => {
+    e.preventDefault();
+    window.open("https://vk.com/catalin_software");
+});
+
+$("#menu-tg").click((e) => {
+    e.preventDefault();
+    window.open("https://t.me/loooltooot");
+});
+
+function hideFullscreenMenu() {
+    $(menu).animate({ opacity: 0 }, 300);
+    setTimeout(() => {
+        $(menu).css("z-index", "-1");
+    }, 1500);
+    if($(window).width() <= 450) {
+        $("#menu-bt").css("display", "block");
+    }
+}
+
+let isAlreadyTraveling = false;
+
+bindActionButtons(actionAboutmeButtons, "#aboutme-section header");
+bindActionButtons(actionPortfolioButtons, "#portfolio-section header");
+bindActionButtons(actionContactsButtons, "#contacts-section");
+function bindActionButtons(buttons, target) {
+    $(buttons).each((i, val) => {
+        $(val).click((e) => {
+            e.preventDefault();
+            hideFullscreenMenu();
+            $(target)[0].scrollIntoView({ behavior: "smooth", block: "center" });
+
+            if($(val).parents("#top-menu").length) {
+                isAlreadyTraveling = true;
+                if($(val).hasClass("aboutme-action")) {
+                    changeActiveTopMenuButton("#top-menu a.aboutme-action", "8.81vw", "0");
+                }
+        
+                if($(val).hasClass("portfolio-action")) {
+                    changeActiveTopMenuButton("#top-menu a.portfolio-action", "8.6vw", "9.22vw");
+                }
+        
+                if($(val).hasClass("contacts-action")) {
+                    changeActiveTopMenuButton("#top-menu a.contacts-action", "8.29vw", "18.15vw");
+                }
+                setTimeout(
+                    () => isAlreadyTraveling = false,
+                    500
+                )
+            }
+        });
+    });
+}
+
+$("#svg-apps").click((e) => {
+    e.preventDefault();
+    window.open("pages/portfolio_app.html");
+})
+
+$("#svg-web").click((e) => {
+    e.preventDefault();
+    window.open("pages/portfolio_web.html");
+})
+
 if($(window).width() > 450) {
     // ::Actionbars Animation::
     setInterval(() => {
@@ -128,7 +202,6 @@ if($(window).width() > 450) {
     });
 
     // ::Top menu buttons::
-    let isAlreadyTraveling = false;
     setInterval(
         () => {
             if(!isAlreadyTraveling) {
@@ -181,11 +254,6 @@ if($(window).width() > 450) {
         $(menu).animate({opacity: 1}, 300);
     });
 
-    $(menuExitButton).click((e) => {
-        e.preventDefault();
-        hideFullscreenMenu();
-    });
-
     $(menuNavButtons).each((i, val) => {
         $(val).hover(() => {
             $("#menu nav ul li a.active").css({"color": "#A5A5A5"});
@@ -194,75 +262,33 @@ if($(window).width() > 450) {
         });
     });
 
-    // ::Menu links::
-    $("#menu-gh").click((e) => {
-        e.preventDefault();
-        window.open("https://github.com/loooltooot");
-    });
-
-    $("#menu-vk").click((e) => {
-        e.preventDefault();
-        window.open("https://vk.com/catalin_software");
-    });
-
-    $("#menu-tg").click((e) => {
-        e.preventDefault();
-        window.open("https://t.me/loooltooot");
-    });
-
-    function hideFullscreenMenu() {
-        $(menu).animate({ opacity: 0 }, 300);
-        setTimeout(() => {
-            $(menu).css("z-index", "-1");
-        }, 1500);
-    }
-
-    // ::Action Buttons handler::
-    bindActionButtons(actionAboutmeButtons, "#aboutme-section header");
-    bindActionButtons(actionPortfolioButtons, "#portfolio-section header");
-    bindActionButtons(actionContactsButtons, "#contacts-section");
-
-    function bindActionButtons(buttons, target) {
-        $(buttons).each((i, val) => {
-            $(val).click((e) => {
-                e.preventDefault();
-                hideFullscreenMenu();
-                $(target)[0].scrollIntoView({ behavior: "smooth", block: "center" });
-
-                if($(val).parents("#top-menu").length) {
-                    isAlreadyTraveling = true;
-                    if($(val).hasClass("aboutme-action")) {
-                        changeActiveTopMenuButton("#top-menu a.aboutme-action", "8.81vw", "0");
-                    }
-            
-                    if($(val).hasClass("portfolio-action")) {
-                        changeActiveTopMenuButton("#top-menu a.portfolio-action", "8.6vw", "9.22vw");
-                    }
-            
-                    if($(val).hasClass("contacts-action")) {
-                        changeActiveTopMenuButton("#top-menu a.contacts-action", "8.29vw", "18.15vw");
-                    }
-                    setTimeout(
-                        () => isAlreadyTraveling = false,
-                        500
-                    )
-                }
-            });
-        });
-    }
     // ————————————————————————————————
-
-    // —————————————Portfolio travel————————————————
-
-    $("#svg-apps").click((e) => {
-        e.preventDefault();
-        window.open("pages/portfolio_app.html");
-    })
-
-    $("#svg-web").click((e) => {
-        e.preventDefault();
-        window.open("pages/portfolio_web.html");
-    })
 } else {
-    
+    let isTopMenuSeen = false;
+
+    $("#menu-bt").click((e) => {
+        e.preventDefault();
+        $(menu).css("z-index", "10");
+        $(menu).animate({opacity: 1}, 300);
+        $("#menu-bt").css("display", "none");
+    });
+
+    let offset = $(window).width() * 1.5;
+
+    $("#menu nav ul li a.active").removeClass("active");
+    $("#menu nav ul div").css("display", "none");
+
+    $(window).scroll(() => {
+        if($(window).scrollTop() >= offset && !isTopMenuSeen) {
+            $(topMenu).css("opacity", 1);
+            isTopMenuSeen = true;
+            $("#menu-bt rect").css("fill", colorBg);
+        }
+
+        if($(window).scrollTop() < offset && isTopMenuSeen) {
+            $(topMenu).css("opacity", 0);
+            isTopMenuSeen = false;
+            $("#menu-bt rect").css("fill", colorSc);
+        }
+    });
 }

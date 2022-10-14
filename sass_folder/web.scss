@@ -62,5 +62,24 @@
         .bg-img {
             width: 83.33vw;
         }
+
+        .mb-bg-img {
+            width: 20vw;
+        }
     }
+
+    .portfolio-item:nth-child(1) {
+        .mb-bg-img {
+            right: 16.04vw;
+            left: auto;
+            bottom: 45.72vw;
+        }
+    } 
+    
+    .portfolio-item:nth-child(3) {
+        .mb-bg-img {
+            right: 15.05vw;
+            bottom: 35.05vw;
+        }
+    } 
 }

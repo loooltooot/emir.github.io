@@ -63,7 +63,7 @@ section header :is(h1, h2) {
     height: 2.61vw;
     width: 100vw;
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 8;
 
     nav ul {
         padding: 0;
@@ -342,10 +342,14 @@ section header span {
     header {
         background-color: $background_color;
         width: 22.86vw;
-        height: 5.21vw;
+        height: 4.51vw;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        h2 {
+            margin-top: -1vw;
+        }
     }
 
     #contacts-description {
@@ -665,12 +669,18 @@ body > footer:hover {
         margin-top: 150vw;
         margin-left: 100vw - 24.67vw;
         cursor: pointer;
-        z-index: 11;
+        z-index: 9;
+
+        rect {
+            transition: fill .3s ease-in-out;
+        }
     }
 
     #top-menu {
         top: 0;
         height: 11.11vw;
+        opacity: 0;
+        transition: opacity ease-in-out .3s;
 
         #logo {
             width: 5.56vw;
@@ -735,6 +745,10 @@ body > footer:hover {
         header {
             width: fit-content;
             padding: 1vw 1vw 2.56vw;
+
+            h2 {
+                margin-top: 0;
+            }
         }
 
         #contacts-description {
@@ -765,6 +779,50 @@ body > footer:hover {
 
             #contacts-block {
                 display: none;
+            }
+
+            #legohand {
+                display: none;
+            }
+        }
+    }
+
+    #menu {
+        header {
+            margin-top: 5vw;
+
+            img {
+                width: 10vw;
+                height: 10vw;
+            }
+
+            #circle {
+                width: 8vw;
+                height: 8vw;
+                border-width: 1.11vw;
+            }
+        }
+
+        nav {
+            height: 50vh;
+        }
+
+        footer {
+            img {
+                width: 30vw;
+            }
+
+            div {
+                width: 38vw;
+                gap: 5vw;
+
+                svg {
+                    width: 9vw;
+                }
+                
+                svg:last-child {
+                    width: 10vw;
+                }
             }
         }
     }

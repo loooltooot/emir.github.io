@@ -57,5 +57,13 @@ main {
         header img {
             margin: 6vw 0 0 6vw;
         }
+
+        img.bg-img, img.mb-bg-img {
+            border-radius: 5.33vw 5.33vw 0 0;
+        }
+
+        img.mb-bg-img {
+            border-radius: 2.33vw 2.33vw 0 0;
+        }
     }
 }
