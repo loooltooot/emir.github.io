@@ -655,6 +655,7 @@ body > footer:hover {
 
     * {
         font-size: $min_font_size;
+        cursor: auto;
     }
 
     body header :is(h1, h2) {
@@ -701,7 +702,7 @@ body > footer:hover {
 
         header {
             div {
-                width: 75.22vw;
+                width: 78.22vw;
             }
         }
 
@@ -805,6 +806,12 @@ body > footer:hover {
 
         nav {
             height: 50vh;
+
+            ul {
+                li:hover a {              
+                    color: $menu_font_color !important;              
+                }
+            }
         }
 
         footer {
