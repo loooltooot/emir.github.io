@@ -71,6 +71,7 @@ function hideFullscreenMenu() {
     }, 1500);
     if($(window).width() <= 450) {
         $("#menu-bt").css("display", "block");
+        $("body").removeAttr("style");
     }
 }
 
@@ -271,6 +272,7 @@ if($(window).width() > 450) {
         $(menu).css("z-index", "10");
         $(menu).animate({opacity: 1}, 300);
         $("#menu-bt").css("display", "none");
+        $("body").css("overflow-y", "hidden");
     });
 
     let offset = $(window).width() * 1.5;
@@ -291,4 +293,6 @@ if($(window).width() > 450) {
             $("#menu-bt rect").css("fill", colorSc);
         }
     });
+
+    $(menu).css("height", `${$(window).height()}px`);
 }
