@@ -1,0 +1,69 @@
+$background-color: #101010;
+
+@mixin beforeBg($bg: linear-gradient(180deg, #363636 100%, #2A2A2A 0%)) {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $bg;
+    transition: opacity ease-in-out .5s;
+    opacity: 0;
+}
+
+body {
+    width: 100vw;
+    background: $background-color url("../img/80534.jpg") no-repeat;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    width: 33.33vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    header img {
+        margin: 1.82vw 0 0 1.82vw;
+    }
+
+    * {
+        z-index: 10;
+    }
+
+    img.bg-img, img.mb-bg-img {
+        border-radius: 1.56vw 1.56vw 0 0;
+        box-shadow: 0px -4px 16px -4px rgba(0, 0, 0, 0.5);
+    }
+
+    img.mb-bg-img {
+        border-radius: .78vw .78vw 0 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .portfolio-item {
+        width: 100vw;
+        overflow-y: clip;
+        height: 50vh;
+
+        header img {
+            margin: 6vw 0 0 6vw;
+        }
+
+        img.bg-img, img.mb-bg-img {
+            border-radius: 5.33vw 5.33vw 0 0;
+        }
+
+        img.mb-bg-img {
+            border-radius: 2.33vw 2.33vw 0 0;
+        }
+    }
+}

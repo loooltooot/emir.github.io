@@ -1,0 +1,56 @@
+@import 'portfolio';
+
+.portfolio-item:nth-child(1) {
+    background: linear-gradient(180deg, #363636 0%, #2A2A2A 100%);    
+}
+
+.portfolio-item:nth-child(1)::before {
+    @include beforeBg($bg: linear-gradient(0deg, #363636 0%, #2A2A2A 100%));
+}
+
+.portfolio-item:nth-child(2) {
+    background: linear-gradient(0deg, #009200 0%, #00B900 100%);
+}
+
+.portfolio-item:nth-child(2)::before {
+    @include beforeBg($bg: linear-gradient(180deg, #009200 0%, #00B900 100%));
+}
+
+.portfolio-item:nth-child(3) {
+    background: linear-gradient(180deg, #FFAE36 0%, #FF9800 100%);
+}
+
+.portfolio-item:nth-child(3)::before {
+    @include beforeBg($bg: linear-gradient(0deg, #FFAE36 0%, #FF9800 100%));
+}
+
+.portfolio-item:hover::before {
+    opacity: 1;
+}
+
+.portfolio-item {
+    .bg-img {
+        width: 15.05vw;
+        margin: 0 auto;
+    }
+
+    .footer-img {
+        width: 5.16vw;
+        position: absolute;
+        right: 1.82vw;
+        bottom: 1.82vw;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .portfolio-item {
+        .bg-img {
+            width: 45.78vw;
+        }
+
+        .footer-img {
+            width: 25vw;
+        }
+    }
+}
