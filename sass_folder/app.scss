@@ -45,12 +45,24 @@
 
 @media screen and (max-width: 450px) {
     .portfolio-item {
+        header img {
+            margin-bottom: 10vw;
+        }
+
         .bg-img {
             width: 45.78vw;
         }
 
         .footer-img {
             width: 25vw;
+        }
+    }
+
+    .portfolio-item:first-child {
+        header img {
+            transform: translateX(-4vw);
+            -webkit-transform: translateX(-4vw - 2.22vw); // temp
+            -moz-transform: translateX(-4vw);
         }
     }
 }

@@ -194,8 +194,7 @@ section header :is(h1, h2) {
 
     header div {
         display: flex;
-        justify-content: space-between;
-        width: 24vw;
+        width: fit-content;
         color: white;
 
         a {
@@ -217,6 +216,10 @@ section header :is(h1, h2) {
 
         a:hover::before {
             opacity: 1;
+        }
+
+        span {
+            margin-left: .5vw;
         }
     }
 
@@ -655,7 +658,7 @@ body > footer:hover {
 
     * {
         font-size: $min_font_size;
-        cursor: auto;
+        cursor: default;
     }
 
     body header :is(h1, h2) {
@@ -701,8 +704,8 @@ body > footer:hover {
         margin-top: 50vw;
 
         header {
-            div {
-                width: 78.22vw;
+            div span {
+                margin-left: 1vw;
             }
         }
 
