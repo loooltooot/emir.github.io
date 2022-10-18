@@ -25,7 +25,7 @@ if($(window).width() > 450) {
     setTimeout(() => {
         $(".portfolio-item").each((i, val) => {
             $(val).removeAttr("style");
-            $(val).css("transition", "transform cubic-bezier(0.3, 0, 0.26, 1) .5s")
+            $(val).css({"transition": "transform cubic-bezier(0.3, 0, 0.26, 1) .5s", "opacity": "1"})
         });
         isAppearingInProgress = false;
     }, 300);

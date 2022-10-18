@@ -64,6 +64,7 @@ section header :is(h1, h2) {
     width: 100vw;
     box-sizing: border-box;
     z-index: 8;
+    will-change: top;
 
     nav ul {
         padding: 0;
@@ -133,6 +134,7 @@ section header :is(h1, h2) {
     height: 100%;
     z-index: -1;
     transition: all 0.5s ease-in-out;
+    will-change: margin-left;
 }
 
 // Welcome section
@@ -274,6 +276,7 @@ section header :is(h1, h2) {
         width: 44.64vw;
         transform-origin: 70% 50%;
         animation: legoman_animation 4s infinite alternate;
+        will-change: top;
     }
 
     #aboutme-decal {
@@ -285,6 +288,7 @@ section header :is(h1, h2) {
         height: 24.28vw;
         background-color: $primary_color;
         border-radius: 20.84vw 20.84vw 0 0;
+        will-change: top;
     }
 }
 
@@ -376,7 +380,7 @@ section header span {
             #contacts-buttons {
                 display: flex;
                 justify-content: space-between;
-                width: 34.48vw;
+                width: 32.48vw;
 
                 .contact-button {
                     border: $background_color solid 0.21vw;
@@ -446,6 +450,7 @@ section header span {
         height: 34.84vw;
         transition: left ease-in-out 1.5s, transform ease-in-out 1.5s;
         transform-origin: 100% 30%;
+        will-change: transform, left;
     }
 
     @keyframes legohand_animation {
@@ -593,6 +598,7 @@ body > footer:hover {
                 position: absolute;
                 z-index: -1;
                 transition: margin-top ease-in-out .5s;
+                will-change: margin-top;
             }
 
             li:nth-child(1):hover ~ div {
