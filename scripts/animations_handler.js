@@ -79,7 +79,7 @@ function hideFullscreenMenu() {
 let isAlreadyTraveling = false;
 
 bindActionButtons(actionAboutmeButtons, "#aboutme-section header");
-bindActionButtons(actionPortfolioButtons, "#portfolio-section header");
+bindActionButtons(actionPortfolioButtons, "#portfolio-section #buttons");
 bindActionButtons(actionContactsButtons, "#contacts-section");
 function bindActionButtons(buttons, target) {
     $(buttons).each((i, val) => {
