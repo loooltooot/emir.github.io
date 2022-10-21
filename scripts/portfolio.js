@@ -80,15 +80,15 @@ $("#eshaverma").click((e) => {
 
 $("#tr-pro").click((e) => {
     e.preventDefault();
-    window.open("https://github.com/loooltooot/tourist-pro");
+    window.open("https://github.com/loooltooot.github.io/tourist-pro");
 });
 
 $("#st-tech").click((e) => {
     e.preventDefault();
-    window.open("https://github.com/loooltooot/systemo-technika");
+    window.open("https://github.com/loooltooot.github.io/systemo-technika");
 });
 
 $("#chx").click((e) => {
     e.preventDefault();
-    // window.open("https://github.com/loooltooot/css-px-converter");
+    // window.open("https://github.com/loooltooot.github.io/chxxsxnian-gxrold");
 });
