@@ -21,6 +21,7 @@ body {
 main {
     display: flex;
     flex-wrap: wrap;
+    overflow: clip;
 }
 
 .portfolio-item {
@@ -31,6 +32,7 @@ main {
     justify-content: space-between;
     position: relative;
     opacity: 0;
+    overflow: clip;
 
     header img {
         margin: 1.82vw 0 0 1.82vw;
@@ -56,6 +58,7 @@ main {
         width: 100vw;
         overflow-y: clip;
         height: 50vh;
+        opacity: 1;
 
         header img {
             margin: 6vw 0 0 6vw;

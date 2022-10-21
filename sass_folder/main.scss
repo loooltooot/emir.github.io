@@ -239,6 +239,7 @@ section header :is(h1, h2) {
         box-sizing: border-box;
         margin-top: 19.07vw;
         border-radius: 0 0 20.84vw 0;
+        min-height: 39.59vw;
 
         span {
             display: block;
@@ -721,6 +722,7 @@ body > footer:hover {
             box-sizing: border-box;
             padding: 8.33vw $side_paddings;
             margin-top: 13.89vw;
+            min-height: 62.5vw;
 
             span {
                 width: fit-content;

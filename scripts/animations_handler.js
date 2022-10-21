@@ -120,6 +120,27 @@ $("#svg-web").click((e) => {
     window.open("pages/portfolio_web.html");
 })
 
+// ::aboutme text::
+let letters = ["H", "i", ", ", "f", "o", "l", "k", "s", "! ", "I", "t", "'", "s ", "m", "e", " ‒ ", "E", "m", "i", "r <br>",
+    "I", "'", "m ", "f", "o", "u", "n", "d", "e", "r ", "o", "f ", "<span class=\"highlight\">C", "a", "t", "a", "l", "i", "n ",
+    "S", "o", "f", "t", "w", "a", "r", "e", " a", "n", "d ", "a", "l", "s", "o ", "F", "r", "o", "n", "t", "-", "e", "n", "d ",
+    "d", "e", "v", "e", "l", "o", "p", "e", "r ", "w", "o", "r", "k", "i", "n", "g ", "w", "i", "t", "h ", "<span class=\"highlight\">F",
+    "l", "u", "t", "t", "e", "r", ", ", "R", "u", "s", "t", ", ", "J", "a", "v", "a", ", ", "E", "c", "m", "a", "S", "c", "r", "i", "p", "t",
+    ", ", "P", "y", "t", "h", "o", "n"
+]
+
+function animateAboutmeText() {
+    for(let i = 0; i < letters.length; i++) {
+        setTimeout(() => {
+            if((i >= 33 && i <= 46) || (i >= 84)) {
+                $("#aboutme-text span:last-child").html($("#aboutme-text span:last-child").html() + letters[i])
+            } else {
+                $("#aboutme-text").html($("#aboutme-text").html() + letters[i])
+            }
+        }, 50 * i)
+    }
+}
+
 if($(window).width() > 450) {
     // ::Actionbars Animation::
     setInterval(() => {
@@ -167,6 +188,7 @@ if($(window).width() > 450) {
 
         if(isInView("#aboutme-description") && !isAboutmeDescriptionSeen) {
             $(legoman).animate({top: "32.6vw"}, 1500);
+            animateAboutmeText();
             isAboutmeDescriptionSeen = true;
         }
 
@@ -282,6 +304,7 @@ if($(window).width() > 450) {
     $("#menu nav ul li a.active").removeClass("active");
     $("#menu nav ul div").css("display", "none");
 
+    let isAboutmeDescriptionSeen = false;
     $(window).scroll(() => {
         if($(window).scrollTop() >= offset && !isTopMenuSeen) {
             $(topMenu).css("opacity", 1);
@@ -293,6 +316,11 @@ if($(window).width() > 450) {
             $(topMenu).css("opacity", 0);
             isTopMenuSeen = false;
             $("#menu-bt rect").css("fill", colorSc);
+        }
+
+        if(isInView("#aboutme-description") && !isAboutmeDescriptionSeen) {
+            animateAboutmeText();
+            isAboutmeDescriptionSeen = true;
         }
     });
 
