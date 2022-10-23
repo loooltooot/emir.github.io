@@ -43,6 +43,9 @@ colorPr = "#ff3f3f",
 colorSc = "#b2ee3b";
 
 // —————————Animations—————————————
+let scrollBarWidth = $(window).outerWidth() - $(window).width();
+let off = $(window).outerWidth() * 0.0521 + scrollBarWidth; // side padding is 5.21vw
+$("#aboutme-description").css("transform", `translateX(-${off}px)`);
 
 $(menuExitButton).click((e) => {
     e.preventDefault();
