@@ -100,22 +100,22 @@ section header :is(h1, h2) {
         color: $secondary_color;
     }
 
-    nav ul li:nth-child(1):hover ~ #active-bg-slider {
+    nav ul li:nth-child(1):hover~#active-bg-slider {
         width: 8.81vw !important;
         margin-left: 0 !important;
     }
 
-    nav ul li:nth-child(2):hover ~ #active-bg-slider {
+    nav ul li:nth-child(2):hover~#active-bg-slider {
         width: 8.6vw !important;
         margin-left: 9.22vw !important;
     }
 
-    nav ul li:nth-child(3):hover ~ #active-bg-slider {
+    nav ul li:nth-child(3):hover~#active-bg-slider {
         width: 8.29vw !important;
         margin-left: 18.15vw !important;
     }
 
-    nav ul li:nth-child(4):hover ~ #active-bg-slider {
+    nav ul li:nth-child(4):hover~#active-bg-slider {
         width: 6.78vw !important;
         margin-left: 26.88vw !important;
     }
@@ -166,11 +166,11 @@ section header :is(h1, h2) {
         border-radius: 0 0 0 10vw;
     }
 
-    .welcome-sidebar:hover > .welcome-actionbar {
+    .welcome-sidebar:hover>.welcome-actionbar {
         background-color: #ffffff0d !important;
     }
 
-    .welcome-sidebar:hover > .welcome-actionbar > .triangle {
+    .welcome-sidebar:hover>.welcome-actionbar>.triangle {
         background-color: white;
     }
 
@@ -262,9 +262,11 @@ section header :is(h1, h2) {
         0% {
             transform: rotate(0deg);
         }
+
         50% {
             transform: rotate(2deg);
         }
+
         100% {
             transform: rotate(1deg);
         }
@@ -332,7 +334,7 @@ section header span {
             transition: opacity ease 0.7s;
         }
 
-        svg:hover > path.shadow {
+        svg:hover>path.shadow {
             opacity: 1;
         }
     }
@@ -434,10 +436,8 @@ section header span {
             }
 
             span:last-child::before {
-                @include icon(
-                    $content: url("../img/tg-cont.svg"), 
-                    $left: -3vw
-                );
+                @include icon($content: url("../img/tg-cont.svg"),
+                    $left: -3vw);
             }
         }
     }
@@ -458,12 +458,15 @@ section header span {
         0% {
             transform: rotate(56.78deg);
         }
+
         33% {
             transform: rotate(62deg);
         }
+
         66% {
             transform: rotate(55deg);
         }
+
         100% {
             transform: rotate(58deg);
         }
@@ -481,7 +484,7 @@ section header span {
 
 // Footer
 
-body > footer {
+body>footer {
     margin-top: 12.53vw;
     position: relative;
 
@@ -496,11 +499,9 @@ body > footer {
 
     .actionbar {
         height: 19.95vw;
-        background: linear-gradient(
-            180deg,
-            rgba(23, 23, 23, 0) 48.44%,
-            #b2ee3b 100%
-        );
+        background: linear-gradient(180deg,
+                rgba(23, 23, 23, 0) 48.44%,
+                #b2ee3b 100%);
         width: 100%;
         z-index: -1;
         opacity: 0;
@@ -508,7 +509,7 @@ body > footer {
     }
 }
 
-body > footer:hover {
+body>footer:hover {
     .actionbar {
         opacity: 1;
     }
@@ -563,7 +564,7 @@ body > footer:hover {
     nav {
         display: flex;
         height: 29.64vw;
-        
+
         ul {
             position: relative;
             display: flex;
@@ -584,12 +585,12 @@ body > footer:hover {
                 }
 
                 a.active {
-                    color: $background_color;      
+                    color: $background_color;
                 }
             }
 
-            li:hover a {              
-                color: $background_color !important;              
+            li:hover a {
+                color: $background_color !important;
             }
 
             div {
@@ -602,19 +603,19 @@ body > footer:hover {
                 will-change: margin-top;
             }
 
-            li:nth-child(1):hover ~ div {
+            li:nth-child(1):hover~div {
                 margin-top: 0;
             }
 
-            li:nth-child(2):hover ~ div {
+            li:nth-child(2):hover~div {
                 margin-top: 8vw;
             }
 
-            li:nth-child(3):hover ~ div {
+            li:nth-child(3):hover~div {
                 margin-top: 15.7vw;
             }
 
-            li:nth-child(4):hover ~ div {
+            li:nth-child(4):hover~div {
                 margin-top: 23.5vw;
             }
         }
@@ -730,7 +731,8 @@ body > footer:hover {
             }
         }
 
-        #legoman, #aboutme-decal {
+        #legoman,
+        #aboutme-decal {
             display: none;
         }
     }
@@ -819,8 +821,8 @@ body > footer:hover {
             height: 50vh;
 
             ul {
-                li:hover a {              
-                    color: $menu_font_color !important;              
+                li:hover a {
+                    color: $menu_font_color !important;
                 }
             }
         }
@@ -837,7 +839,7 @@ body > footer:hover {
                 svg {
                     width: 9vw;
                 }
-                
+
                 svg:last-child {
                     width: 10vw;
                 }

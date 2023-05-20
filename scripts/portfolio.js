@@ -1,7 +1,7 @@
 // ————————Variebles————————
 
-let 
-scale = 80;
+let
+    scale = 80;
 
 // —————————————————————————————
 
@@ -15,17 +15,19 @@ $(".footer-img").each((i, val) => {
 });
 
 // ::Portfolio items appearing::
-if($(window).width() > 450) {
-    $(".portfolio-item:nth-child(1)").css({"transform": "translateX(-33.33vw)", 
-    "-webkit-transform": "translateX(-33.75vw)", 
-    "-moz-transform": "translateX(-33.33vw)"});
+if ($(window).width() > 450) {
+    $(".portfolio-item:nth-child(1)").css({
+        "transform": "translateX(-33.33vw)",
+        "-webkit-transform": "translateX(-33.75vw)",
+        "-moz-transform": "translateX(-33.33vw)"
+    });
 
     $(".portfolio-item:nth-child(2)").css("transform", "translateY(-100vh)");
     $(".portfolio-item:nth-child(3)").css("transform", "translateY(100vh)");
     setTimeout(() => {
         $(".portfolio-item").each((i, val) => {
             $(val).removeAttr("style");
-            $(val).css({"transition": "transform cubic-bezier(0.3, 0, 0.26, 1) .5s", "opacity": "1"})
+            $(val).css({ "transition": "transform cubic-bezier(0.3, 0, 0.26, 1) .5s", "opacity": "1" })
         });
         isAppearingInProgress = false;
     }, 300);
@@ -39,11 +41,11 @@ if($(window).width() > 450) {
 
     $(".portfolio-item").each((i, val) => {
         $(val).hover(() => {
-            if(!isAppearingInProgress && !$(val).hasClass("initial-animation")) {
+            if (!isAppearingInProgress && !$(val).hasClass("initial-animation")) {
                 $(val).children(".bg-img").css("transform", "translateY(5vh)");
                 $(val).children(".mb-bg-img").css("transform", "translateY(5.8vh)");
-                $(val).children(".bg-img").css("transition", "transform cubic-bezier(0.3, 0, 0.09, 1.2) .5s");     
-                $(val).children(".mb-bg-img").css("transition", "transform cubic-bezier(0.3, 0, 0.09, 1.2) .7s");       
+                $(val).children(".bg-img").css("transition", "transform cubic-bezier(0.3, 0, 0.09, 1.2) .5s");
+                $(val).children(".mb-bg-img").css("transition", "transform cubic-bezier(0.3, 0, 0.09, 1.2) .7s");
                 $(val).addClass("initial-animation");
             } else {
                 $(val).children(".bg-img").css("transform", "translateY(6vh)");
@@ -51,15 +53,15 @@ if($(window).width() > 450) {
                     $(val).children(".bg-img").css("transform", "translateY(5vh)");
                 }, 500);
             }
-        }, () => {});
+        }, () => { });
     });
 }
 
 $(".portfolio-item header img").each((i, val) => {
-    let 
-    viewWidth = $(window).width(),
-    logoWidth = $(val).width();
-    $(val).css("width", `${(logoWidth/viewWidth) * scale}vw`);
+    let
+        viewWidth = $(window).width(),
+        logoWidth = $(val).width();
+    $(val).css("width", `${(logoWidth / viewWidth) * scale}vw`);
 });
 
 // ::Travel to github links::
@@ -90,5 +92,42 @@ $("#st-tech").click((e) => {
 
 $("#chx").click((e) => {
     e.preventDefault();
-    // window.open("https://loooltooot.github.io/chxxsxnian-gxrold");
+    window.open("https://github.com/loooltooot/chx");
+});
+
+$("#my-giro").click((e) => {
+    e.preventDefault();
+    window.open("https://mogila.vercel.app");
+});
+
+$("#gribko").click((e) => {
+    e.preventDefault();
+    window.open("https://github.com/loooltooot/gribko");
+});
+
+$("#idara").click((e) => {
+    e.preventDefault();
+    window.open("https://idara.vercel.app");
+});
+
+// window scroll
+var windowHeight = $(window).height();
+var isAnimating = false;
+
+$(window).on('wheel', function (event) {
+    if (!isAnimating) {
+        isAnimating = true;
+        var delta = event.originalEvent.deltaY;
+        console.log(delta)
+
+        if (delta < 0) {
+            $('html, body').animate({ scrollTop: '-=' + windowHeight + 'px' }, 'slow', function () {
+                isAnimating = false;
+            });
+        } else {
+            $('html, body').animate({ scrollTop: '+=' + windowHeight + 'px' }, 'slow', function () {
+                isAnimating = false;
+            });
+        }
+    }
 });
