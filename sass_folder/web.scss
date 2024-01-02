@@ -1,44 +1,11 @@
 @import 'portfolio';
 
-.portfolio-item#tr-pro {
-    background: linear-gradient(180deg, #6CF8E8 0%, #60D7C9 100%);
-}
-
-.portfolio-item#tr-pro::before {
-    @include beforeBg($bg: linear-gradient(0deg, #6CF8E8 0%, #60D7C9 100%));
-}
-
 .portfolio-item#st-tech {
-    background: linear-gradient(0deg, #244F52 0%, #306569 100%);
+    background: linear-gradient(0deg, #ffffff 0%, #EB3B8B 100%);
 }
 
 .portfolio-item#st-tech::before {
-    @include beforeBg($bg: linear-gradient(180deg, #244F52 0%, #306569 100%));
-}
-
-.portfolio-item#chx {
-    background: linear-gradient(180deg, #FF00F5 0%, #C200BB 100%);
-}
-
-.portfolio-item#chx::before {
-    @include beforeBg($bg: linear-gradient(0deg, #FF00F5 0%, #C200BB 100%));
-}
-
-.portfolio-item#my-giro {
-    background: linear-gradient(180deg, #f3f3f3 0%, #faa4a4 100%);
-}
-
-.portfolio-item#my-giro::before {
-    @include beforeBg($bg: linear-gradient(0deg, #f3f3f3 0%, #faa4a4 100%));
-}
-
-
-.portfolio-item#idara {
-    background: linear-gradient(0deg, #7DFF94 0%, #295531 100%);
-}
-
-.portfolio-item#idara::before {
-    @include beforeBg($bg: linear-gradient(180deg, #7DFF94 0%, #295531 100%));
+    @include beforeBg($bg: linear-gradient(180deg, #ffffff 0%, #EB3B8B 100%));
 }
 
 .portfolio-item#gribko {
@@ -47,6 +14,14 @@
 
 .portfolio-item#gribko::before {
     @include beforeBg($bg: linear-gradient(0deg, #000000 0%, #3BD055 100%));
+}
+
+.portfolio-item#int {
+    background: linear-gradient(180deg, #000000 0%, #CEFF67 100%);
+}
+
+.portfolio-item#int::before {
+    @include beforeBg($bg: linear-gradient(0deg, #000000 0%, #CEFF67 100%));
 }
 
 .portfolio-item:hover::before {
@@ -68,20 +43,6 @@
     }
 }
 
-.portfolio-item:nth-child(1) {
-    .mb-bg-img {
-        left: 6.04vw;
-        bottom: 16.72vw;
-    }
-}
-
-.portfolio-item:nth-child(3) {
-    .mb-bg-img {
-        right: 5.05vw;
-        bottom: 15.05vw;
-    }
-}
-
 @media screen and (max-width: 450px) {
     .portfolio-item {
         .bg-img {
@@ -92,19 +53,18 @@
             width: 20vw;
         }
     }
+}
 
-    .portfolio-item:nth-child(1) {
-        .mb-bg-img {
-            right: 16.04vw;
-            left: auto;
-            bottom: 45.72vw;
-        }
+.portfolio-item#int {
+
+    img.bg-img,
+    img.mb-bg-img {
+        border-radius: 0;
+        box-shadow: none;
+        will-change: transform;
     }
 
-    .portfolio-item:nth-child(3) {
-        .mb-bg-img {
-            right: 15.05vw;
-            bottom: 35.05vw;
-        }
+    .bg-img {
+        width: 20vw;
     }
 }

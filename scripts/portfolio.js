@@ -80,34 +80,19 @@ $("#eshaverma").click((e) => {
     window.open("https://github.com/loooltooot/e-shawerma");
 });
 
-$("#tr-pro").click((e) => {
-    e.preventDefault();
-    window.open("https://loooltooot.github.io/tourist-pro");
-});
-
 $("#st-tech").click((e) => {
     e.preventDefault();
-    window.open("https://loooltooot.github.io/systemo-technika");
-});
-
-$("#chx").click((e) => {
-    e.preventDefault();
-    window.open("https://github.com/loooltooot/chx");
-});
-
-$("#my-giro").click((e) => {
-    e.preventDefault();
-    window.open("https://mogila.vercel.app");
+    window.open("https://system-tech.vercel.app");
 });
 
 $("#gribko").click((e) => {
     e.preventDefault();
-    window.open("https://github.com/loooltooot/gribko");
+    window.open("https://github.com/loooltooot/s1mple-store");
 });
 
-$("#idara").click((e) => {
+$("#int").click((e) => {
     e.preventDefault();
-    window.open("https://idara.vercel.app");
+    window.open("https://integraph.vercel.app/articles/2");
 });
 
 // window scroll
