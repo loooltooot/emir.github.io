@@ -1,4 +1,9 @@
 $background-color: #101010;
+$primary_color: #ff3f3f;
+$secondary_color: #b2ee3b;
+$side_paddings: 5.21vw;
+$min_font_size: 1.25vw;
+$menu_font_color: #A5A5A5;
 
 @mixin beforeBg($bg: linear-gradient(180deg, #363636 100%, #2A2A2A 0%)) {
     content: "";
@@ -12,10 +17,24 @@ $background-color: #101010;
     opacity: 0;
 }
 
+body::-webkit-scrollbar {
+    width: .42vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: $background_color;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: $secondary_color;
+    border-radius: .42vw;
+}
+
 body {
     width: 100vw;
     background: $background-color url("../img/80534.jpg") no-repeat;
     background-size: cover;
+    overflow-x: clip;
 }
 
 main {
@@ -26,7 +45,7 @@ main {
 
 .portfolio-item {
     width: 33.33vw;
-    height: 100vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -42,7 +61,8 @@ main {
         z-index: 10;
     }
 
-    img.bg-img, img.mb-bg-img {
+    img.bg-img,
+    img.mb-bg-img {
         border-radius: 1.56vw 1.56vw 0 0;
         box-shadow: 0px -4px 16px -4px rgba(0, 0, 0, 0.5);
         will-change: transform;
@@ -64,7 +84,8 @@ main {
             margin: 6vw 0 0 6vw;
         }
 
-        img.bg-img, img.mb-bg-img {
+        img.bg-img,
+        img.mb-bg-img {
             border-radius: 5.33vw 5.33vw 0 0;
         }
 

@@ -24,6 +24,54 @@
     @include beforeBg($bg: linear-gradient(0deg, #000000 0%, #CEFF67 100%));
 }
 
+.portfolio-item#tr {
+    background: linear-gradient(180deg, #6CF8E8 0%, #60D7C9 100%);
+}
+
+.portfolio-item#tr::before {
+    @include beforeBg($bg: linear-gradient(0deg, #6CF8E8 0%, #60D7C9 100%));
+}
+
+.portfolio-item#idara {
+    background: linear-gradient(180deg, #61c573 0%, #7DFF94 100%);
+}
+
+.portfolio-item#idara::before {
+    @include beforeBg($bg: linear-gradient(0deg, #61c573 0%, #7DFF94 100%));
+}
+
+.portfolio-item#my-giro {
+    background: linear-gradient(180deg, #f3f3f3 0%, #faa4a4 100%);
+}
+
+.portfolio-item#my-giro::before {
+    @include beforeBg($bg: linear-gradient(0deg, #f3f3f3 0%, #faa4a4 100%));
+}
+
+.portfolio-item#v-no {
+    background: linear-gradient(180deg, #004479 0%, #ac2d40 100%);
+}
+
+.portfolio-item#v-no::before {
+    @include beforeBg($bg: linear-gradient(0deg, #004479 0%, #ac2d40 100%));
+}
+
+.portfolio-item#rare {
+    background: linear-gradient(180deg, #ab11da 0%, #e24177 100%);
+}
+
+.portfolio-item#rare::before {
+    @include beforeBg($bg: linear-gradient(0deg, #ab11da 0%, #e24177 100%));
+}
+
+.portfolio-item#yaku {
+    background: linear-gradient(180deg, #ffffff 0%, #1d1d1d 100%);
+}
+
+.portfolio-item#yaku::before {
+    @include beforeBg($bg: linear-gradient(0deg, #ffffff 0%, #1d1d1d 100%));
+}
+
 .portfolio-item:hover::before {
     opacity: 1 !important;
 }

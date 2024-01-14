@@ -95,24 +95,32 @@ $("#int").click((e) => {
     window.open("https://integraph.vercel.app/articles/2");
 });
 
-// window scroll
-var windowHeight = $(window).height();
-var isAnimating = false;
+$("#tr").click((e) => {
+    e.preventDefault();
+    window.open("https://loooltooot.github.io/tourist-pro");
+});
 
-$(window).on('wheel', function (event) {
-    if (!isAnimating) {
-        isAnimating = true;
-        var delta = event.originalEvent.deltaY;
-        console.log(delta)
+$("#idara").click((e) => {
+    e.preventDefault();
+    window.open("https://idara.vercel.app/");
+});
 
-        if (delta < 0) {
-            $('html, body').animate({ scrollTop: '-=' + windowHeight + 'px' }, 'slow', function () {
-                isAnimating = false;
-            });
-        } else {
-            $('html, body').animate({ scrollTop: '+=' + windowHeight + 'px' }, 'slow', function () {
-                isAnimating = false;
-            });
-        }
-    }
+$("#my-giro").click((e) => {
+    e.preventDefault();
+    window.open("https://mogila.vercel.app/");
+});
+
+$("#v-no").click((e) => {
+    e.preventDefault();
+    window.open("http://violations.loooltooot.ru/");
+});
+
+$("#yaku").click((e) => {
+    e.preventDefault();
+    window.open("https://yaku-loooltooot.vercel.app/");
+});
+
+$("#rare").click((e) => {
+    e.preventDefault();
+    window.open("http://rar-net.loooltooot.ru/");
 });
