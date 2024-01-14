@@ -91,18 +91,6 @@
     }
 }
 
-@media screen and (max-width: 450px) {
-    .portfolio-item {
-        .bg-img {
-            width: 83.33vw;
-        }
-
-        .mb-bg-img {
-            width: 20vw;
-        }
-    }
-}
-
 .portfolio-item#int {
 
     img.bg-img,
@@ -114,5 +102,23 @@
 
     .bg-img {
         width: 20vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .portfolio-item {
+        .bg-img {
+            width: 83.33vw;
+        }
+
+        .mb-bg-img {
+            width: 20vw;
+        }
+    }
+
+    .portfolio-item#int {
+        .bg-img {
+            width: 50vw;
+        }
     }
 }
