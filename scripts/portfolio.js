@@ -95,20 +95,20 @@ $("#int").click((e) => {
     window.open("https://integraph.vercel.app/articles/2");
 });
 
-$("#tr").click((e) => {
-    e.preventDefault();
-    window.open("https://loooltooot.github.io/tourist-pro");
-});
+// $("#tr").click((e) => {
+//     e.preventDefault();
+//     window.open("https://loooltooot.github.io/tourist-pro");
+// });
 
 $("#idara").click((e) => {
     e.preventDefault();
     window.open("https://idara.vercel.app/");
 });
 
-$("#my-giro").click((e) => {
-    e.preventDefault();
-    window.open("https://mogila.vercel.app/");
-});
+// $("#my-giro").click((e) => {
+//     e.preventDefault();
+//     window.open("https://mogila.vercel.app/");
+// });
 
 $("#v-no").click((e) => {
     e.preventDefault();
@@ -120,7 +120,7 @@ $("#yaku").click((e) => {
     window.open("https://yaku-loooltooot.vercel.app/");
 });
 
-$("#rare").click((e) => {
-    e.preventDefault();
-    window.open("http://rar-net.loooltooot.ru/");
-});
+// $("#rare").click((e) => {
+//     e.preventDefault();
+//     window.open("http://rar-net.loooltooot.ru/");
+// });
